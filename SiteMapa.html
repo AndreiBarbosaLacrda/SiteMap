@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiteMapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            background-repeat: no-repeat;
+        }
+        #info {
+            background: white;
+            padding: 10px;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tt">
+   <div class="uuu">
+    <h1 style="background-color: black; color: white; width: 1000px; height: 100%; ">
+        SiteMapa
+     </h1>
+   </div>
+  <div class="mm">
+  <ul>
+    <li> <a style="color: black; " href="menu dos mapa.html"> Voltar</a></li>
+  </ul>
+  </div>
+    </div>
+
+<div id="info">Passe o mouse sobre um país</div>
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Cria o mapa
+    const map = L.map('map').setView([20, 0], 2); // Posição inicial e zoom
+
+    // Adiciona uma camada de tile
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+    }).addTo(map);
+
+    // Dados dos países (exemplo simplificado)
+    const countries = {
+        "Brasil": { coords: [-14.2350, -51.9253], description: "Brasil: o Brasil é um pais que teve sua origem em 1500 com a colonização por portugal e que em 7 de setembro de 1822 se tornou independente a partir de uma mini-guerra contra portugal e uma compensação finaceira para Portugal, depois da guerra do Paraguai e lei Aurea que baniu a escravidão os latifundiarios e o exercito ficaram irrtados com o rei juntos as ideias de criar uma republiaca ser algo bem discutido pelos latifundiaros, em 15 de novembro de 1822 os dois grupos deram um golpe de estado instaurando a republica ." },
+        "Argentina": { coords: [-38.4161, -63.6167], description: "Argentiana: Surgiu como colônia espanhola em 1516 e tornou-se independente em 1816, após uma guerra que durou quinze anos." },
+        "França": { coords: [46.6034, 1.8883], description: "França: A França tem suas origens a partir do imperio carolongio na idade media que em 843 se dividiu em três reinos a francia ocidental a lotaringia e a francia oriental, do reino da francia ocidental surgiria o reino da França, A Primeira República Francesa foi proclamada no dia 21 de setembro de 1792, através da Convenção Nacional, como processo da Revolução Francesa ." },
+        "Suiça": { coords: [46.8182, 8.2275], description: "Suiça: A origem da Suíça está relacionada com a formação da Confederação Suíça, em 1291, em 1848 com o fim da guerra dos trinta anos e o tratado de Vestfália a suiça se tornou indepentente do Sacro Imperio Germanico e foi reconhecido como pais , ja a Suiça atual foi formada a partir do congresso de Vienna que deu o fim as guerras Napoleonicas e oficializou a neutralidade da Suiça ." },
+        "Afeganistão": {coords:[33.9391, 67.7099], description:"Afeganistão:O Afeganistão como Estado surge em 1823 como Emirado do Afeganistão, sendo controlado pelo Império Durrani. A criação desse Emirado ocorreu com a unificação de diversas tribos, como os pastós, tajiques, hazaras, usbeques e turcomenos, unificando-os como afegãos."},
+        
+        // Adicione mais países aqui
+    };
+
+    // Cria marcadores e adiciona eventos
+    for (const country in countries) {
+        const { coords, description } = countries[country];
+        const marker = L.marker(coords).addTo(map)
+            .bindPopup(country)
+            .on('mouseover', () => {
+                document.getElementById('info').innerText = description;
+            })
+            .on('mouseout', () => {
+                document.getElementById('info').innerText = "Passe o mouse sobre um país, e para ter o nome clique no icone. ";
+            });
+    }
+</script>
+
+</body>
+</html>
