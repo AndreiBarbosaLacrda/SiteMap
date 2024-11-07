@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SiteMapa</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
-<link rel="icon" href="icon.jfif">
     <style>
         #map {
             height: 600px;
@@ -53,25 +49,37 @@
         maxZoom: 19,
     }).addTo(map);
 
-    // Dados dos países (exemplo simplificado)
-    const countries = {
+
+    const countries = 
         "Brasil": { coords: [-14.2350, -51.9253], description: "Brasil: o Brasil é um pais que teve sua origem em 1500 com a colonização por portugal e que em 7 de setembro de 1822 se tornou independente a partir de uma mini-guerra contra portugal e uma compensação finaceira para Portugal, depois da guerra do Paraguai e lei Aurea que baniu a escravidão os latifundiarios e o exercito ficaram irrtados com o rei juntos as ideias de criar uma republiaca ser algo bem discutido pelos latifundiaros, em 15 de novembro de 1822 os dois grupos deram um golpe de estado instaurando a republica ." },
         "Argentina": { coords: [-38.4161, -63.6167], description: "Argentiana: Surgiu como colônia espanhola em 1516 e tornou-se independente em 1816, após uma guerra que durou quinze anos." },
         "França": { coords: [46.6034, 1.8883], description: "França: A França tem suas origens a partir do imperio carolongio na idade media que em 843 se dividiu em três reinos a francia ocidental a lotaringia e a francia oriental, do reino da francia ocidental surgiria o reino da França, A Primeira República Francesa foi proclamada no dia 21 de setembro de 1792, através da Convenção Nacional, como processo da Revolução Francesa ." },
         "Suiça": { coords: [46.8182, 8.2275], description: "Suiça: A origem da Suíça está relacionada com a formação da Confederação Suíça, em 1291, em 1848 com o fim da guerra dos trinta anos e o tratado de Vestfália a suiça se tornou indepentente do Sacro Imperio Germanico e foi reconhecido como pais , ja a Suiça atual foi formada a partir do congresso de Vienna que deu o fim as guerras Napoleonicas e oficializou a neutralidade da Suiça ." },
         "Afeganistão": {coords:[33.9391, 67.7099], description:"Afeganistão:O Afeganistão como Estado surge em 1823 como Emirado do Afeganistão, sendo controlado pelo Império Durrani. A criação desse Emirado ocorreu com a unificação de diversas tribos, como os pastós, tajiques, hazaras, usbeques e turcomenos, unificando-os como afegãos."},
         "Jamaica": {coords:[18.1096, -77.2975], description: "Jamaica: A jamaica uma ilha caribenha repleta de cultura e história, conquistou sua independência do Reino Unido em 6 de agosto de 1962. Atualmente, o país integra a Comunidade Britânica (organização formada pelo Reino Unido e suas antigas colônias."},
-        "Albânia": {coords:[41.1533, 20.1683], description: "A Albânia tem origem no antigo Reino da Ilíria. Conquistada pelos romanos em 168 a.C., é incorporada ao Império Bizantino em 395. No século XV cai em poder dos turcos otomanos, que convertem a população ao islamismo e adotam uma política despótica, despertando o nacionalismo albanês, duramente reprimido, depois da guerra dos balkans contra os otomanos e foi oficialmente reconhecida como independemte na conferencia de Londres em 1913."},
-        "Andorra": {coords:[42.5063, 1.5211], description:"Em 788 Carlos Magno ordena uma batalha contra os árabes nos Pirenéus. Isso marca a verdadeira criação de Andorra. O território andorrano fica integrado novamente à marca militar hispânica, dentro do condado militar de Seu d'Urgell."},
-        "Alemanha": {coords:[51.1657, 10.4515], description:"O estado conhecido como Alemanha foi unificado como um moderno Estado-nação em 1871, quando o Império Alemão foi criado, tendo o Reino da Prússia como seu maior constituinte.Após a derrota francesa na Guerra Franco-Prussiana, o Império Alemão foi proclamado no Versalhes em 18 de janeiro de 1871. A dinastia de Hohenzollern da Prússia declarou o novo império, cuja capital era Berlim, até então a capital prussiana."},
-        "Antigua e Barbuda": {coords:[17.0608, -61.7964], description:"O país foi descoberto por Cristóvão Colombo e colonizado por espanhóis e franceses, sucedidos pelos britânicos, quando estes o comparam, em 1667. O país esteve, então, sob soberania britânica até sua independência, em 1981. Antígua e Barbuda é membro da Comunidade e Nações e a chefe de Estado é o Rei Charles III"},
-        "Argelia": {coords:[28.0339, 1.6596], description:"A Argélia é um país africano banhado pelo Mar Mediterrâneo. A sua história está ligada aos povos berberes e árabes que habitavam o território do país, que foi uma colônia da França por mais de um século. Após embates militares entre argelinos e franceses, a independência do país foi promulgada em 1962."},
-        "Angola": {coords: [-11.2027, 17.8739], description: "Angola foi uma colónia portuguesa que apenas abrangeu o actual território do país no século XIX e a ocupação efectiva, como determinado pela Conferência de Berlim em 1884, aconteceu apenas na década de 1920. A independência do domínio português foi alcançada em 1975, depois de uma guerra de independência."},
+        "Japão": {coords:[36.2048, 138.2529], description: "O Japão, uma ilha rica em cultura e história, modernizou-se rapidamente a partir da Era Meiji em 1868. Após a derrota na Segunda Guerra Mundial, adotou uma constituição pacifista e se reconstruiu como uma potência econômica. Hoje, é um importante aliado dos Estados Unidos e membro ativo de organizações como a ONU e o G7."},
+        "Jordânia": {coords:[30.5852, 36.2384], description: "A Jordânia, um país do Oriente Médio com vasta herança cultural, é conhecida por sua história milenar e pelo sítio arqueológico de Petra. Tornou-se independente do Reino Unido em 1946 e, desde então, tem sido um ponto de estabilidade na região. Hoje, a Jordânia é uma monarquia constitucional, aliada do Ocidente e membro ativo da ONU e da Liga Árabe."},
+        "Cazaquistão": {coords:[48.0196, 66.9237], description: "O Cazaquistão, vasta nação da Ásia Central e rica em recursos naturais, fez parte da União Soviética até conquistar sua independência em 1991. Desde então, o país se destaca pela estabilidade política e pelo crescimento econômico, além de desempenhar um papel estratégico na região. Hoje, o Cazaquistão é membro de organizações como a ONU e a Comunidade dos Estados Independentes (CEI), mantendo relações diplomáticas com o Ocidente e a Ásia."},
+        "Quênia": {coords:[1.2864, 36.8172], description: "O Quênia, localizado no leste da África e famoso por suas paisagens e vida selvagem, conquistou a independência do Reino Unido em 1963. Desde então, tornou-se uma das maiores economias da região e um centro de inovação e turismo. Hoje, o Quênia é membro ativo da ONU, da União Africana e da Comunidade da África Oriental, desempenhando um papel importante na política e economia do continente."},
+        "Kiribati": {coords:[-3.3704, -168.7340], description: "Kiribati, uma nação insular no Oceano Pacífico composta por 33 atóis e ilhas, conquistou sua independência do Reino Unido em 1979. Conhecida por suas belas paisagens e biodiversidade marinha, o país enfrenta desafios devido à elevação do nível do mar, que ameaça sua existência. Hoje, Kiribati é membro da ONU e do Fórum das Ilhas do Pacífico, destacando-se nas discussões globais sobre mudanças climáticas e sustentabilidade."},
+        "Kuwait": {coords:[29.3759, 47.9774], description: "O Kuwait, um pequeno e rico país do Oriente Médio, conquistou sua independência do Reino Unido em 1961. Conhecido por suas vastas reservas de petróleo, o país é uma das economias mais fortes da região. Após a invasão iraquiana em 1990 e a Guerra do Golfo, o Kuwait reconstruiu suas infraestruturas e manteve sua posição estratégica. Hoje, é membro ativo da ONU, da Liga Árabe e da OPEP, influenciando a política energética global."},
+        "Laos": {coords:[19.8563, 102.4955], description: "O Laos, país montanhoso no Sudeste Asiático, conquistou sua independência da França em 1953. Conhecido por suas paisagens naturais e pelo rio Mekong, o Laos é um dos poucos países socialistas do mundo e mantém uma economia em crescimento, impulsionada por recursos hidrelétricos e mineração. Atualmente, é membro da ONU e da ASEAN, buscando maior integração regional e desenvolvimento sustentável."},
+        "Lesoto": {coords:[-29.6099, 28.2336], description: "Lesoto, um pequeno país montanhoso e enclave da África do Sul, conquistou sua independência do Reino Unido em 1966. Conhecido como o "Reino no Céu" devido à sua elevada altitude, Lesoto enfrenta desafios econômicos, mas aproveita recursos hídricos para exportar energia. Hoje, é membro da ONU e da União Africana, buscando cooperação regional para impulsionar o desenvolvimento e enfrentar questões sociais."},
+        "Letônia": {coords:[56.8796, 24.6032], description: "A Letônia, país báltico no norte da Europa, recuperou sua independência da União Soviética em 1991. Com uma rica herança cultural e histórica, a Letônia passou por rápidas reformas e crescimento econômico desde então. Hoje, é membro da União Europeia, da OTAN e da ONU, desempenhando um papel importante na segurança regional e na cooperação europeia.
+        "Líbano": {coords:[33.8547, 35.8623], description: "O Líbano, país mediterrâneo do Oriente Médio, conquistou sua independência da França em 1943. Conhecido por sua diversidade cultural e histórica, o Líbano já foi um importante centro financeiro e cultural na região. Apesar de enfrentar desafios políticos e econômicos, o país mantém uma forte identidade nacional. Hoje, é membro da ONU e da Liga Árabe, contribuindo para discussões regionais e internacionais."},
+    
 
-        // Adicione mais países aqui
-    }
 
-    // Cria marcadores e adiciona eventos
+
+
+
+
+.
+        
+        
+    };
+
+    
     for (const country in countries) {
         const { coords, description } = countries[country];
         const marker = L.marker(coords).addTo(map)
