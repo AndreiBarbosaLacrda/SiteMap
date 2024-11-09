@@ -18,4 +18,21 @@ img{
   justify-content: center;
   margin-top: 20px;
 }
-.
+#botao-mapaMundi{
+  width: 100px;
+  border: 1px black solid;
+  background-color: aqua;
+  border-radius: 20px;
+  margin: 10px;
+}
+#botao-mapaMundi a{
+  text-decoration: none;
+}
+.direction{
+  width: 50px;
+  border-radius: 20px;
+}
+.direction:hover{
+  cursor: pointer;
+  background-color: blue;
+}
