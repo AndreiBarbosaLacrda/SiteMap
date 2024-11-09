@@ -6,7 +6,8 @@
   }
   body{
     padding: 30px;
-    border: 10px solid powderblue;
+    background-color: #d4bc5d;
+    border: 10px solid rgb(0, 0, 0);
     height: auto;
 }
 img{
@@ -19,11 +20,12 @@ img{
   margin-top: 20px;
 }
 #botao-mapaMundi{
-  width: 100px;
+  width: 80%;
   border: 1px black solid;
-  background-color: aqua;
+  background-color: rgb(235, 198, 36);
   border-radius: 20px;
-  margin: 10px;
+  display: block;
+  margin: auto;
 }
 #botao-mapaMundi a{
   text-decoration: none;
@@ -34,5 +36,5 @@ img{
 }
 .direction:hover{
   cursor: pointer;
-  background-color: blue;
+  background-color: rgb(235, 198, 36);
 }

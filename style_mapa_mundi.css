@@ -5,7 +5,8 @@
 }
 body{
   padding: 30px;
-  border: 10px solid powderblue;
+  background-color: #d4bc5d;
+  border: 10px solid rgb(0, 0, 0);
   height: auto;
 }
 #map {
@@ -28,7 +29,7 @@ body{
 #botao-voltar{
   width: 100px;
   border: 1px black solid;
-  background-color: aqua;
+  background-color: rgb(235, 198, 36);
   border-radius: 20px;
   margin: 10px;
 }
