@@ -1,0 +1,21 @@
+
+*{
+    margin:0;
+    border:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  body{
+    padding: 30px;
+    border: 10px solid powderblue;
+    height: auto;
+}
+img{
+  width: auto;
+  height: 500px;
+}
+.slideshow-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.
