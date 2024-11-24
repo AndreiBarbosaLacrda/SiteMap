@@ -13,7 +13,7 @@
 img{
   width: auto;
   height: 500px;
-}
+}                                                                                           
 .slideshow-container{
   display: flex;
   justify-content: center;
@@ -30,11 +30,39 @@ img{
 #botao-mapaMundi a{
   text-decoration: none;
 }
-.direction{
+.direction {
   width: 50px;
+  height: 50px;
   border-radius: 20px;
-}
-.direction:hover{
+  background-color: transparent;
+  position: absolute;  /* Posiciona os botões fora do fluxo normal */
+  top: 50%;  /* Centraliza verticalmente */
+  transform: translateY(-50%);  /* Ajusta a posição vertical exata */
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.direction:hover {
   background-color: rgb(235, 198, 36);
+}
+
+.direction:first-of-type {
+  left: 10%;  
+}
+
+/* Botão à direita */
+.direction:last-of-type {
+  right: 10%; 
+}
+
+#conteudo_principal {
+  position: relative; 
+  width: 100%;
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
 }
