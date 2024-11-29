@@ -22,20 +22,20 @@
      <button id="botao-voltar"><a style="text-decoration: none;" href="menu dos mapa.html"> Voltar</a></button>
   </div>
     </div>
-
+ 
 <div id="info">Passe o mouse sobre um país</div>
 <div id="map"></div>
-
+ 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     // Cria o mapa
     const map = L.map('map').setView([20, 0], 2); // Posição inicial e zoom
-
+ 
     // Adiciona uma camada de tile
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
     }).addTo(map);
-
+ 
     // Dados dos países (exemplo simplificado)
     const countries = {
         "Brasil": { coords: [-14.2350, -51.9253], description: "Brasil: o Brasil é um pais que teve sua origem em 1500 com a colonização por portugal e que em 7 de setembro de 1822 se tornou independente a partir de uma mini-guerra contra portugal e uma compensação finaceira para Portugal, depois da guerra do Paraguai e lei Aurea que baniu a escravidão os latifundiarios e o exercito ficaram irrtados com o rei juntos as ideias de criar uma republiaca ser algo bem discutido pelos latifundiaros, em 15 de novembro de 1822 os dois grupos deram um golpe de estado instaurando a republica ." },
@@ -58,7 +58,7 @@
         "Bahrein": {coords: [25.9304, 50.6370], description: "Bahrein: Tornou-se estado independente em 14 de Agosto de 1971, quando assinou um tratado de amizade com a Grã-Bretanha; tornou-se membro da ONU nesse ano e no seguinte elegeu a sua primeira Assembleia Constituinte."},
         "Bangladesh": {coords: [23.685, 90.3563], description: "Bangladehs: Bangladesh conquistou sua independência do Paquistão em 1971, depois da guerra civil de nove meses entre o Paquistão Ocidental e o Paquistão Oriental. De 1947 a 1971, a região que hoje é Bangladesh foi o Paquistão Oriental."},
         "Barbados": {coords: [13.1939, -59.5432], description: "Barbados: Anteriormente sob o domínio de outros territórios, o Reino da Bélgica formou-se em 1830, fato marcado pela proclamação de sua independência da Holanda. Foi instaurada a monarquia constitucional como forma de governo. A Holanda, no entanto, reconheceu a independência belga apenas no ano de 1839."},
-        "Itália": {coords:[41.8719, 12.5674],  description: "Itália:A história da Itália abrange o período antigo, a Idade Média e a era moderna. A Itália foi a pátria dos romanos e a metrópole das províncias do Império Romano. Após a queda de Roma em 476 dC, a Itália foi fragmentada em numerosas cidades-estado e governos regionais. O Renascimento italiano espalhou-se pelo resto da Europa, trazendo um interesse renovado pelo humanismo, pela ciência, pela exploração e pela arte com o início da era moderna. A unificação da Itália foi um processo de união entre os vários reinos que compunham a Península Itálica, após a expulsão dos austríacos. Ocorreu na segunda metade do século XIX e terminou em 1871 com a unicção italiana."}, 
+        "Itália": {coords:[41.8719, 12.5674],  description: "Itália:A história da Itália abrange o período antigo, a Idade Média e a era moderna. A Itália foi a pátria dos romanos e a metrópole das províncias do Império Romano. Após a queda de Roma em 476 dC, a Itália foi fragmentada em numerosas cidades-estado e governos regionais. O Renascimento italiano espalhou-se pelo resto da Europa, trazendo um interesse renovado pelo humanismo, pela ciência, pela exploração e pela arte com o início da era moderna. A unificação da Itália foi um processo de união entre os vários reinos que compunham a Península Itálica, após a expulsão dos austríacos. Ocorreu na segunda metade do século XIX e terminou em 1871 com a unicção italiana."},
         "Islândia": {coords:[64.9631, -19.0208], description: "Islândia: A história da Islândia é relativamente recente, tanto no aspeto geológico como no sociológico, pois as primeiras povoados habitados na Islândia apenas surgiram aí a partir do século IX d.C."},
         "Irlanda": {coords:[53.4129, -8.2439], description:"Irlanda: A Irlanda foi dividida em Estado Livre Irlandês (26 condados) e a Irlanda do Norte (6 condados). A Irlanda do Norte é de maioria protestante e a República da Irlanda é de maioria católica. Em 1937, a República da Irlanda aprovou sua constituição como independente, e a Irlanda do Norte continuou a integrar o Reino Unido. A capital da Irlanda é Dublin, cidade que apresenta mais de 4 milhões de habitantes em seu território. O Estado Livre da Irlanda surgiu após o Tratado Anglo-Irlandês, acordo fundamental que encerrou de forma definitiva a Guerra de Independência da Irlanda."},
         "Albânia": {coords:[41.1533, 20.1683], description: "Albânia: A Albânia tem origem no antigo Reino da Ilíria. Conquistada pelos romanos em 168 a.C., é incorporada ao Império Bizantino em 395. No século XV cai em poder dos turcos otomanos, que convertem a população ao islamismo e adotam uma política despótica, despertando o nacionalismo albanês, duramente reprimido, depois da guerra dos balkans contra os otomanos e foi oficialmente reconhecida como independemte na conferencia de Londres em 1913."},
@@ -156,7 +156,7 @@
         "Maldivas":{coords:[3.2028, 73.2207],description:"Maldivas: Um arquipélago no Oceano Índico, as Maldivas obtiveram independência do Reino Unido em 1965. Conhecidas por suas ilhas paradisíacas, as Maldivas enfrentam desafios climáticos e são membros da ONU e da SAARC."},
         "Mali":{coords:[17.5707, -3.9962],description:"Mali: País sem litoral na África Ocidental, o Mali tornou-se independente da França em 1960. Com uma rica herança cultural, enfrenta desafios de segurança e desenvolvimento e é membro da ONU e da União Africana."},
         "Malta":{coords:[35.9375, 14.3754],description:"Malta: Uma pequena nação insular no Mediterrâneo, Malta conquistou sua independência do Reino Unido em 1964. É membro da União Europeia e da ONU, com uma economia baseada no turismo, serviços e finanças."},
-        "Marrocos":{coords:[31.7917, -7.0926],description:"Marrocos: Localizado no norte da África, Marrocos obteve sua independência da França e da Espanha em 1956. É membro da ONU e da Liga Árabe, com forte influência na cultura árabe e na política africana."},
+        "Marrocos":{coords:[31.7917, -7.0926],description:"Marrocos: Localizado no norte da África, Marr°ocos obteve sua independência da França e da Espanha em 1956. É membro da ONU e da Liga Árabe, com forte influência na cultura árabe e na política africana."},
         "Maurício":{coords:[-20.348404, 57.552152],description:"Maurício: Uma ilha no Oceano Índico, Maurício tornou-se independente do Reino Unido em 1968. Com uma economia diversificada, o país é membro da ONU e da União Africana, promovendo estabilidade e desenvolvimento sustentável."},
         "Mauritânia":{coords:[20.2540, -10.9408],description:"Mauritânia: Situada na África Ocidental, Mauritânia tornou-se independente da França em 1960. Rica em recursos naturais, é membro da ONU e da União Africana e enfrenta desafios de segurança e desenvolvimento."},
         "México":{coords:[23.6345, -102.5528],description:"México: Na América do Norte, o México tornou-se independente da Espanha em 1821. Com uma cultura vibrante e uma economia diversificada, é membro da ONU e da OCDE, desempenhando papel central na América Latina."},
@@ -175,9 +175,49 @@
         "Panamá":{coords:[8.9824, -79.5205],description:"Panamá: Localizado na América Central, o Panamá tornou-se independente da Colômbia em 1903 com apoio dos EUA. Conhecido pelo Canal do Panamá, é membro da ONU e atua como importante centro de comércio global."},
         "Papua Nova Guiné":{coords:[-6.314993, 143.95555],description:"Papua Nova Guiné: No Pacífico Sul, Papua Nova Guiné tornou-se independente da Austrália em 1975. Rica em cultura e biodiversidade, é membro da ONU e da Commonwealth, com economia baseada em recursos naturais."},
         "Paquistão":{coords:[30.3753, 69.3451],description:"Paquistão: Localizado no sul da Ásia, o Paquistão tornou-se independente do Reino Unido em 1947. Com uma posição estratégica, é membro da ONU e da OIC, desempenhando papel importante na política regional."},
+        "Paraguai":{coords:[-23.4420, -58.4438],description:"Paraguai: A independência do Paraguai, proclamada em 14 e 15 de maio de 1811, libertou o país do domínio espanhol de forma pacífica. Liderado por figuras como José Gaspar Rodríguez de Francia, o Paraguai também rejeitou a influência das Províncias Unidas do Rio da Prata, consolidando sua autonomia como república."}
+        "Peru":{coords:[-9.1900, -75.0152],description:"Peru: A independência do Peru foi proclamada em 28 de julho de 1821 por José de San Martín, após a luta contra o domínio espanhol. Embora declarada nessa data, a independência só foi consolidada em 1824, com a vitória das forças lideradas por Simón Bolívar na Batalha de Ayacucho."}
+        "Polônia":{coords:[51.9194, 19.1451],description:"Pôlonia: A Polônia declarou sua independência em 11 de novembro de 1918, após 123 anos de ocupação por Rússia, Prússia e Áustria. O marco ocorreu com o fim da Primeira Guerra Mundial, liderado por Józef Piłsudski, que assumiu o comando do recém-restaurado Estado polonês."}
+        "Portugal":{coords:[39.3999, -8.2245],description:"Portugal: A independência de Portugal foi declarada em 1139, com a formação do Reino de Portugal, liderado por D. Afonso Henriques, após a vitória na Batalha de Ourique. Foi formalmente reconhecida pelo Reino de Leão em 1143 e pelo Papa em 1179, consolidando Portugal como um reino soberano."}
+        "Quênia":{coords:[1.2864, 36.8172],description:"Quênia: A independência do Quênia foi alcançada em 12 de dezembro de 1963, após décadas de colonização britânica. O movimento de libertação foi liderado pelo Mau Mau e por figuras como Jomo Kenyatta, que se tornou o primeiro presidente do país. A independência marcou o fim do domínio colonial e o início de um governo autônomo."}
+        "Reino Unido":{coords:[55.3781, -3.4360],description:"Reino Unido: Composto por quatro nações (Inglaterra, Escócia, País de Gales e Irlanda do Norte), o Reino Unido foi uma potência imperial e colonial. Tornou-se independente das suas colônias ao longo do século XX e é membro da ONU, da OTAN e da Commonwealth, desempenhando um papel importante na política global."}
+        "República Tcheca":{coords:[49.8175, 15.4729],description:"Reino Unido: Composto por quatro nações (Inglaterra, Escócia, País de Gales e Irlanda do Norte), o Reino Unido foi uma potência imperial e colonial. Tornou-se independente das suas colônias ao longo do século XX e é membro da ONU, da OTAN e da Commonwealth, desempenhando um papel importante na política global."}
+
+
+
+
+
+
+
+
+
+."}
+
+
+
+
+
+
+
+"}
+
+
+
+
+
+
+
+"}
+
+
+
+
+
+
+"},
         // Adicione mais países aqui
     }
-
+ 
     // Cria marcadores e adiciona eventos
     for (const country in countries) {
         const { coords, description } = countries[country];
@@ -191,6 +231,6 @@
             });
     }
 </script>
-
+ 
 </body>
 </html>
