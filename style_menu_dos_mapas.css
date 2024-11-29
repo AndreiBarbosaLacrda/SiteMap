@@ -13,6 +13,7 @@
 img{
   width: auto;
   height: 500px;
+  border: 1px solid black;
 }
 .slideshow-container{
   display: flex;
@@ -32,9 +33,19 @@ img{
 }
 .direction{
   width: 50px;
+  height: 500px;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .direction:hover{
   cursor: pointer;
   background-color: rgb(235, 198, 36);
+  height: 500px;
+}
+.carousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

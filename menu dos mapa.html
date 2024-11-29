@@ -12,7 +12,7 @@
 </head>
 <body>
    <div class="tile">
-    <h1>
+    <h1 style="background-color: black; color: white; width: 100%; height: 100%; padding: 10px;">
         SiteMapa
     </h1>
    </div>
@@ -24,22 +24,16 @@
    </div>
 <div class="mapa">
     <button id="botao-mapaMundi"><a href="SiteMapa.html">Clique aqui para ver o mapa mundi</a></button>
-    <h1>Mapas:</h1>
+    <h1 style="margin-bottom: 20px;">Mapas:</h1>
 </div>
 
 <div class="carousel">
-    <div class="slideshow-container">
-      <div class="mySlides one">
-        <div class="texto">
-            <img src="1444.webp">
-        </div>
-    </div>
-       <div class="mySlides two"><img src="1444.webp"></div>
+    <div class="direction" tabindex="0" onclick="plusSlides(-1)" role="button">❮</div>
+        <div class="mySlides two"><img src="1444.webp"></div>
         <div class="mySlides three"><img src="1900.jpg"></div>
         <div class="mySlides four"><img src="1937.png"></div>
-     </div>
-    <div class="direction" tabindex="0" onclick="plusSlides(-1)" role="button">❮</div>
-    <div class="direction" tabindex="0" onclick="plusSlides(1)" role="button">❯</div>
+        <div class="direction" tabindex="0" onclick="plusSlides(1)" role="button">❯</div>
+    </div>
 </div>
 
  <script src="script.js"> </script>
