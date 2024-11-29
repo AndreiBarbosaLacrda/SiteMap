@@ -14,6 +14,8 @@ img{
   width: auto;
   height: 500px;
   border: 1px solid black;
+
+  margin-left: ;
 }
 .slideshow-container{
   display: flex;
