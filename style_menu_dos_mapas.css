@@ -14,11 +14,8 @@ img{
   width: auto;
   height: 500px;
   border: 1px solid black;
-<<<<<<< Updated upstream
-=======
 
   margin-left: 1px;
->>>>>>> Stashed changes
 }
 .slideshow-container{
   display: flex;
