@@ -28,7 +28,8 @@
  
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    // Cria o mapa_+
+    // Cria o mapa
+    const map = L.map('map').setView([20, 0], 2); // Posição inicial e zoom
  
     // Adiciona uma camada de tile
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
